@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{project.meta.ogDescription}}">
+        <meta name="theme-color" content="#ffffff">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="{{project.meta.robotsMeta}}">
+    <title>Space Allocation Website</title>
+
+    <!-- SEO Description -->
+    <meta name="description" content="{{project.seoDescription}}">
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" as="style">
+   
+    <!-- css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
+    <!-- Utilities and Components -->
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+    
+    <!-- Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Dynamic Meta Tags -->
+    <meta name="description" content="{{project.meta.ogDescription}}">
+    <meta name="keywords" content="{{project.meta.keywords}}">
+    <meta name="robots" content="{{project.meta.robotsMeta}}">
+    <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+    <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+    <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+    <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+    <meta property="og:title" content="{{project.meta.ogTitle}}">
+    <meta property="og:description" content="{{project.meta.ogDescription}}">
+    <meta property="og:image" content="{{project.meta.ogImage}}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="{{project.name}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+    <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+    <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+    <!-- base styling -->
+    <link rel="stylesheet" href="baseStyling.css">
+    <!-- Enhanced Image Handler -->
+    
+    <style>
+        body{
+            scroll-behavior: smooth !important;
+        }
+    </style>
+    <style> *, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.inset-y-0{top:0px;bottom:0px}.left-0{left:0px}.right-4{right:1rem}.top-0{top:0px}.top-4{top:1rem}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-2{margin-left:0.5rem}.ml-3{margin-left:0.75rem}.ml-4{margin-left:1rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.mb-12{margin-bottom:3rem}.mt-4{margin-top:1rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-2{height:0.5rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-8{height:2rem}.h-80{height:20rem}.h-screen{height:100vh}.h-24{height:6rem}.h-32{height:8rem}.h-40{height:10rem}.h-48{height:12rem}.min-h-screen{min-height:100vh}.w-16{width:4rem}.w-2{width:0.5rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-8{width:2rem}.w-full{width:100%}.w-10{width:2.5rem}.w-32{width:8rem}.w-4{width:1rem}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.appearance-none{-webkit-appearance:none;appearance:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-neutral-200\/30 > :not([hidden]) ~ :not([hidden]){border-color:rgb(229 229 229 / 0.3)}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.overflow-y-hidden{overflow-y:hidden}.scroll-smooth{scroll-behavior:smooth}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-l-lg{border-top-left-radius:0.5rem;border-bottom-left-radius:0.5rem}.rounded-r-lg{border-top-right-radius:0.5rem;border-bottom-right-radius:0.5rem}.rounded-t{border-top-left-radius:0.25rem;border-top-right-radius:0.25rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-8{border-width:8px}.border-b{border-bottom-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-blue-600{--tw-border-opacity:1;border-color:rgb(37 99 235 / var(--tw-border-opacity, 1))}.border-neutral-200\/30{border-color:rgb(229 229 229 / 0.3)}.border-neutral-200\/40{border-color:rgb(229 229 229 / 0.4)}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-t-transparent{border-top-color:transparent}.bg-\[\#4C585B\]{--tw-bg-opacity:1;background-color:rgb(76 88 91 / var(--tw-bg-opacity, 1))}.bg-\[\#E5E7EB\]{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-neutral-100{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.bg-neutral-50{--tw-bg-opacity:1;background-color:rgb(250 250 250 / var(--tw-bg-opacity, 1))}.bg-neutral-800\/80{background-color:rgb(38 38 38 / 0.8)}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.bg-purple-600{--tw-bg-opacity:1;background-color:rgb(147 51 234 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgb(254 249 195 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-gray-300{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}.bg-opacity-50{--tw-bg-opacity:0.5}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-blue-50{--tw-gradient-from:#eff6ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(239 246 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-gray-50{--tw-gradient-from:#f9fafb var(--tw-gradient-from-position);--tw-gradient-to:rgb(249 250 251 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-green-50{--tw-gradient-from:#f0fdf4 var(--tw-gradient-from-position);--tw-gradient-to:rgb(240 253 244 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-purple-50{--tw-gradient-from:#faf5ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(250 245 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-blue-100{--tw-gradient-to:#dbeafe var(--tw-gradient-to-position)}.to-green-100{--tw-gradient-to:#dcfce7 var(--tw-gradient-to-position)}.to-purple-100{--tw-gradient-to:#f3e8ff var(--tw-gradient-to-position)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-3{padding-bottom:0.75rem}.pb-6{padding-bottom:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.align-middle{vertical-align:middle}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.text-\[\#4C585B\]{--tw-text-opacity:1;color:rgb(76 88 91 / var(--tw-text-opacity, 1))}.text-\[\#F4EDD3\]{--tw-text-opacity:1;color:rgb(244 237 211 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-neutral-400{--tw-text-opacity:1;color:rgb(163 163 163 / var(--tw-text-opacity, 1))}.text-neutral-500{--tw-text-opacity:1;color:rgb(115 115 115 / var(--tw-text-opacity, 1))}.text-neutral-600{--tw-text-opacity:1;color:rgb(82 82 82 / var(--tw-text-opacity, 1))}.text-neutral-900{--tw-text-opacity:1;color:rgb(23 23 23 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-red-700{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-700{--tw-text-opacity:1;color:rgb(161 98 7 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-100{opacity:1}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-lg{--tw-backdrop-blur:blur(16px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-\[\#7E99A3\]:hover{--tw-bg-opacity:1;background-color:rgb(126 153 163 / var(--tw-bg-opacity, 1))}.hover\:bg-\[\#A5BFCC\]:hover{--tw-bg-opacity:1;background-color:rgb(165 191 204 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-50:hover{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-neutral-100:hover{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.hover\:bg-neutral-700:hover{--tw-bg-opacity:1;background-color:rgb(64 64 64 / var(--tw-bg-opacity, 1))}.hover\:bg-neutral-50:hover{--tw-bg-opacity:1;background-color:rgb(250 250 250 / var(--tw-bg-opacity, 1))}.hover\:text-blue-700:hover{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:absolute:focus{position:absolute}.focus\:left-0:focus{left:0px}.focus\:top-0:focus{top:0px}.focus\:z-50:focus{z-index:50}.focus\:bg-white:focus{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.focus\:p-4:focus{padding:1rem}.focus\:text-black:focus{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-inset:focus{--tw-ring-inset:inset}.focus\:ring-blue-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(59 130 246 / var(--tw-ring-opacity, 1))}.focus\:ring-white:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity, 1))}.focus\:ring-offset-2:focus{--tw-ring-offset-width:2px}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:col-span-3{grid-column:span 3 / span 3}.lg\:col-span-1{grid-column:span 1 / span 1}.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:w-64{width:16rem}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}}</style></head>
+   
+      
+
+
+
+
+
+
+
+
+
+    <body class="antialiased text-gray-800 min-h-screen flex flex-col scroll-smooth bg-white dark:bg-gray-900 dark:text-white">
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+           Skip to main content
+            </a>
+    
+        <!-- Header -->
+        <header class="relative z-50 bg-white dark:bg-gray-900">
+          <!-- Header content goes here -->
+        </header>
+    
+        <!-- Main content area -->
+        <main id="main-content" class="flex-1 relative ">
+          <!-- Content will be injected here -->
+        </main>
+    
+        <!-- {bodyScripts} -->
+    
+     
+    <element id="ed7654fe-5771-4b61-9087-76891e1ffc57" data-section-id="ed7654fe-5771-4b61-9087-76891e1ffc57">
+    
+    
+                  <htmlcode id="el-291802qe">
+    <div id="root">
+      <div class="flex h-screen overflow-hidden bg-[#E5E7EB]  dark:bg-[#1F1F1F]" id="el-r3mp44q6">
+          <!-- Sidebar Navigation -->
+          <nav id="layout" class="hidden lg:flex lg:w-64 flex-shrink-0 flex-col bg-white border-r border-neutral-200/30 dark:bg-gray-800">
+              <div class="flex items-center justify-between h-16 px-4 border-b border-neutral-200/30 dark:border-neutral-600" id="el-ju81vgx7">
+                  <span class="text-xl font-semibold dark:text-white" id="el-j83878lv">ShelfSpace</span>
+              </div>
+              
+              <div class="flex flex-col flex-1 overflow-y-hidden" id="el-jgisvw0n">
+                  <div class="flex-1 px-3 py-4 space-y-1" id="el-7xn7zbmr">
+      <!-- Dashboard Button -->
+      <a href="#dashboard" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#F4EDD3] bg-[#4C585B] hover:bg-[#7E99A3] transition-colors dark:bg-[#2D3748] dark:text-white dark:hover:bg-[#4A5568]" id="dashboard-link">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          Dashboard
+      </a>
+
+      <a href="#dataupload" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#4C585B] hover:bg-[#A5BFCC] transition-colors dark:text-white dark:hover:bg-[#4A5568]">
+        Data Upload
+    </a>
+    <a href="#analytics" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#4C585B] hover:bg-[#A5BFCC] transition-colors dark:text-white dark:hover:bg-[#4A5568]">
+        Analytics
+    </a>
+    <a href="#shelfpredictor" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#4C585B] hover:bg-[#A5BFCC] transition-colors dark:text-white dark:hover:bg-[#4A5568]">
+        Predictor
+    </a>
+    <a href="#integration" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#4C585B] hover:bg-[#A5BFCC] transition-colors dark:text-white dark:hover:bg-[#4A5568]">
+        Integration
+    </a>
+    
+      <!-- Category Buttons -->
+      <div class="mb-4">
+        <a href="#dashboard" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#F4EDD3] bg-[#4C585B] hover:bg-[#7E99A3] transition-colors dark:bg-[#2D3748] dark:text-white dark:hover:bg-[#4A5568]" id="dashboard-link">
+            Categories
+        </a>
+          <a href="#groceries" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#4C585B] hover:bg-[#A5BFCC] transition-colors  dark:text-white dark:hover:bg-[#4A5568]">
+              Groceries
+          </a>
+          <a href="#electronics" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#4C585B] hover:bg-[#A5BFCC] transition-colors  dark:text-white dark:hover:bg-[#4A5568]">
+              Electronics
+          </a>
+          <a href="#clothing" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-[#4C585B] hover:bg-[#A5BFCC] transition-colors  dark:text-white dark:hover:bg-[#4A5568]">
+              Clothing
+          </a>
+      </div>
+    
+      <!-- Original Navigation Items -->
+      
+    
+      <!-- Dark Mode Toggle -->
+      <button onclick="toggleDarkMode()" class="flex items-center px-4 py-3 mt-auto text-sm font-medium rounded-lg text-[#4C585B] hover:bg-[#A5BFCC] transition-colors dark:text-white dark:hover:bg-[#4A5568]" >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" ></path>
+          </svg>
+          Dark Mode
+      </button>
+    </div>
+                  
+                  <div class="p-4 border-t border-neutral-200/30" id="el-kpnzmis4">
+                      <div class="flex items-center" id="el-t843jv2v">
+                          <img src="https://avatar.iran.liara.run/public" class="w-8 h-8 rounded-full transition-opacity duration-300 opacity-100" alt="Profile" loading="lazy" id="el-ediai2pl">
+                          <div class="ml-3" id="el-6u7ht4s9">
+                              <p class="text-sm font-medium" id="el-ocjtobot">Admin User</p>
+                              <p class="text-xs text-neutral-500" id="el-0il3hoq0">admin@shelf.com</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </nav>
+    
+          <!-- Mobile menu -->
+          <div x-data="{ isOpen: false }" class="lg:hidden" id="el-8vn6596y">
+              <button type="button" @click="isOpen = !isOpen" class="fixed top-4 right-4 z-50 inline-flex items-center justify-center p-2 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" id="el-0u4shoqj">
+                  <span class="sr-only" id="el-83lpui6d">Open main menu</span>
+                  <svg x-show="!isOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-plp06b7x">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="el-ps2cf8z2"></path>
+                  </svg>
+                  <svg x-show="isOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-t2c3tl6g" style="display: none;">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-i1gr4xns"></path>
+                  </svg>
+              </button>
+    
+              <div x-show="isOpen" @click.away="isOpen = false" @resize.window="if (window.innerWidth > 1024) isOpen = false" x-transition:enter="transition ease-out duration-100 transform" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="fixed inset-0 z-40 bg-neutral-800/80 backdrop-blur-lg lg:hidden" id="el-ura0977r" style="display: none;">
+                  <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg" id="el-wf3mbxch">
+                      <div class="flex items-center justify-between h-16 px-4 border-b border-neutral-200/30" id="el-wn69g8cn">
+                          <span class="text-xl font-semibold" id="el-zih2k6qo">ShelfSpace</span>
+                      </div>
+                      <div class="px-3 py-4 space-y-1" id="el-qgioute3">
+                          <a href="#dataupload" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-neutral-900 bg-neutral-100" id="el-7qlgxbr7">
+                              Data Upload
+                          </a>
+                          <a href="#analytics" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-neutral-600 hover:bg-neutral-100 transition-colors" id="el-n90jbowe">
+                              Analytics
+                          </a>
+                          <a href="#shelfpredictor" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-neutral-600 hover:bg-neutral-100 transition-colors" id="el-olcf6j5i">
+                              Predictor
+                          </a>
+                          <a href="#integration" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-neutral-600 hover:bg-neutral-100 transition-colors" id="el-3wr9k89b">
+                              Integration
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    
+          <main class="flex-1 overflow-y-auto" id="el-83qljweb">
+            <div class="sticky top-0 z-10 flex items-center justify-between h-16 px-4 bg-white border-b border-neutral-200/30 dark:bg-gray-900 dark:border-neutral-700" id="el-w9giaizl">
+                <h1 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-r41a4ckf">Dashboard</h1>
+                
+                <div class="flex items-center space-x-4" id="el-v2djr9dd">
+                    <button class="gradient-btn"> Shelf Predictor
+                    </button>
+                    <button class="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg dark:text-neutral-300 dark:hover:bg-neutral-700" id="el-7hfggq89">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-r8m80zwt">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" id="el-b9zgd9af"></path>
+                        </svg>
+                    </button>
+                    <img src="https://avatar.iran.liara.run/public" class="w-8 h-8 rounded-full cursor-pointer transition-opacity duration-300 opacity-100" alt="Profile" loading="lazy" id="el-58rr2mmo">
+                </div>
+            </div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+              <div class="max-w-7xl mx-auto px-4 py-12 ">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Retail Analytics Intelligence</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">Transform your shelf space optimization with data-driven insights</p>
+                </div>
+          
+                <!-- Analytics Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- Sales Performance Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Sales Performance</h3>
+                        <div class="h-48 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg flex items-center justify-center">
+                            <!-- Placeholder for sales graph -->
+                            <div class="w-full h-40 bg-opacity-50 rounded flex items-end justify-around px-4">
+                                <div class="w-4 bg-blue-500 rounded-t" style="height: 60%"></div>
+                                <div class="w-4 bg-blue-500 rounded-t" style="height: 80%"></div>
+                                <div class="w-4 bg-blue-500 rounded-t" style="height: 40%"></div>
+                                <div class="w-4 bg-blue-500 rounded-t" style="height: 90%"></div>
+                                <div class="w-4 bg-blue-500 rounded-t" style="height: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+          
+                    <!-- Shelf Space Utilization -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Shelf Space Utilization</h3>
+                        <div class="h-48 bg-gradient-to-r from-green-50 to-green-100 rounded-lg flex items-center justify-center">
+                            <!-- Placeholder for utilization chart -->
+                            <div class="relative w-32 h-32 rounded-full bg-gradient-to-tr from-green-500 via-blue-500 to-purple-500 flex items-center justify-center">
+                                <!-- Inner Content -->
+                                <div class="absolute w-20 h-20 rounded-full bg-white flex items-center justify-center">
+                                  <span class="text-sm font-bold text-gray-700">85%</span>
+                                </div>
+                              </div>
+                                                            
+                        </div>
+                    </div>
+          
+                    <!-- Revenue Forecast -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Revenue Forecast</h3>
+                        <div class="h-48 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg flex items-center justify-center">
+                            <!-- Placeholder for forecast line chart -->
+                            <div class="w-full h-40 flex items-center">
+                                <svg class="w-full h-24" viewBox="0 0 100 30">
+                                    <path d="M 0 30 L 20 20 L 40 25 L 60 15 L 80 5 L 100 10" fill="none" stroke="#8B5CF6" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                <!-- CTA Section -->
+                <div class="text-center">
+                    <button class="px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
+                        Start Analysis
+                    </button>
+                    <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">Upload your data to get started with optimization</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="0f6a5163-d560-4f62-9c17-8b93732a2eab" data-section_id="0f6a5163-d560-4f62-9c17-8b93732a2eab" class="page_sectionHighlight__ahPeD sectionCode ">
+                <htmlcode id="el-plt3zijj">
+                    <section id="dataupload" class="p-6 bg-white dark:bg-gray-900 rounded-lg">
+                        <div class="max-w-4xl mx-auto" id="el-quwezc0i">
+                            <div class="mb-8" id="el-53wxv9xd">
+                                <h2 class="text-2xl font-bold text-gray-900 dark:text-white" id="el-n4vda39e">Data Upload</h2>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300" id="el-n70as7jg">Upload your sales data in CSV or Excel format for shelf space optimization</p>
+                            </div>
+            
+                            <div class="p-8 border-2 border-dashed border-neutral-200/40 rounded-lg text-center dark:border-neutral-700/40" id="el-l0tadeic">
+                                <div class="space-y-4" id="el-zldm6q1r">
+                                    <div class="flex items-center justify-center" id="el-ng9bmzuh">
+                                        <svg class="w-16 h-16 text-neutral-400 dark:text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-eodfktfg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" id="el-zhcdywwt"></path>
+                                        </svg>
+                                    </div>
+                                    <div id="el-oo5avjxm">
+                                      <div>
+                                        <label class="relative cursor-pointer">
+                                          <input
+                                            type="file"
+                                            class="hidden"
+                                            accept=".csv, .xlsx, .xls"
+                                            id="fileInput"
+                                          />
+                                          <span
+                                            class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                            id="uploadButton"
+                                          >
+                                            Choose File
+                                          </span>
+                                        </label>
+                                        <span id="fileName" class="ml-4 text-gray-600 italic"></span>
+                                        <button
+                                          class="inline-flex items-center px-6 py-3 mt-4 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                          id="submitButton"
+                                        >
+                                          Upload File
+                                        </button>
+                                      </div>
+                                      <script>
+                                        const fileInput = document.getElementById("fileInput");
+                                        const fileNameDisplay = document.getElementById("fileName");
+                                        const submitButton = document.getElementById("submitButton");
+                                      
+                                        // Display the selected file name
+                                        fileInput.addEventListener("change", () => {
+                                          const file = fileInput.files[0];
+                                          if (file) {
+                                            fileNameDisplay.textContent = `Selected: ${file.name}`;
+                                          } else {
+                                            fileNameDisplay.textContent = "No file chosen";
+                                          }
+                                        });
+                                      
+                                        // Handle file upload
+                                        submitButton.addEventListener("click", (event) => {
+                                          event.preventDefault(); // Prevent form submission if you later wrap this in a <form>
+                                          const file = fileInput.files[0];
+                                          if (file) {
+                                            alert(`Uploading: ${file.name}`);
+                                            // Add your file upload logic here, e.g., uploading to a server
+                                          } else {
+                                            alert("Please choose a file before uploading.");
+                                          }
+                                        });
+                                      </script>
+                                      
+                                    </div>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400" id="el-sj4z0cph">or drag and drop</p>
+                                    <p class="text-xs text-gray-400 dark:text-gray-500" id="el-0le84tsq">Supported formats: CSV, XLSX, XLS (max 10MB)</p>
+                                </div>
+                            </div>
+            
+                            <div class="mt-8" id="el-l6zpk0np">
+                                <div class="border border-neutral-200/30 rounded-lg overflow-hidden dark:border-neutral-700/40" id="el-vjtp5nvl">
+                                    <div class="px-4 py-3 bg-neutral-50 border-b border-neutral-200/30 dark:bg-neutral-800 dark:border-neutral-700/40" id="el-2ztq389w">
+                                        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300" id="el-660ppfyf">Recent Uploads</h3>
+                                    </div>
+                                    <div class="divide-y divide-neutral-200/30 dark:divide-neutral-700/40" id="el-0fb2f8q3">
+                                        <div class="px-4 py-3 flex items-center justify-between" id="el-awjuvsdg">
+                                            <div class="flex items-center" id="el-lc35az51">
+                                                <svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-zdne5mog">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" id="el-9d3s6xle"></path>
+                                                </svg>
+                                                <span class="ml-3 text-sm text-gray-700 dark:text-gray-300" id="el-zd38kahr">sales_data_2024.csv</span>
+                                            </div>
+                                            <span class="text-xs text-gray-500 dark:text-gray-400" id="el-o9varycs">2 minutes ago</span>
+                                        </div>
+                                        <div class="px-4 py-3 flex items-center justify-between" id="el-zrbs9758">
+                                            <div class="flex items-center" id="el-tzjji5y5">
+                                                <svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-hhu1ijhk">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" id="el-5n5c8yi2"></path>
+                                                </svg>
+                                                <span class="ml-3 text-sm text-gray-700 dark:text-gray-300" id="el-y7queoxx">inventory_report.xlsx</span>
+                                            </div>
+                                            <span class="text-xs text-gray-500 dark:text-gray-400" id="el-07017c4t">1 hour ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="mt-8 flex justify-end" id="el-ibhwozdw">
+                                <button class="px-6 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" id="el-ueyczwq9">
+                                    Process Data
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </htmlcode>
+            </div>
+            
+            <div id="03636cc2-ca7e-46a1-ae59-6bab5141ebd7" data-section_id="03636cc2-ca7e-46a1-ae59-6bab5141ebd7" class="page_sectionHighlight__ahPeD sectionCode dark:bg-gray-900">
+                <htmlcode id="el-9gtvtjuk">
+                    <section id="analytics" class="p-6 ">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="el-ogacs8kf">
+                            <!-- Overview Cards -->
+                            <div class="bg-white rounded-lg border border-neutral-200/30 p-6 dark:bg-gray-900 dark:border-neutral-700/40" id="el-86s2gc7k">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white" id="el-jxvvdgcx">Total Sales</h3>
+                                <p class="mt-2 text-3xl font-bold text-blue-600" id="el-5pmtpeik">$524,389</p>
+                                <p class="text-sm text-gray-500 mt-1 dark:text-gray-400" id="el-bblckyqv">+12.5% from last month</p>
+                            </div>
+                            <div class="bg-white rounded-lg border border-neutral-200/30 p-6 dark:bg-gray-900 dark:border-neutral-700/40" id="el-ic47wogd">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white" id="el-kmhgk7w8">Products</h3>
+                                <p class="mt-2 text-3xl font-bold text-green-600" id="el-phn2gyck">1,284</p>
+                                <p class="text-sm text-gray-500 mt-1 dark:text-gray-400" id="el-7idqu7nt">Active inventory items</p>
+                            </div>
+                            <div class="bg-white rounded-lg border border-neutral-200/30 p-6 dark:bg-gray-900 dark:border-neutral-700/40" id="el-j6zpndb4">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white" id="el-ijebeiis">Shelf Utilization</h3>
+                                <p class="mt-2 text-3xl font-bold text-purple-600" id="el-gotrqrks">87%</p>
+                                <p class="text-sm text-gray-500 mt-1 dark:text-gray-400" id="el-6e33w4ow">Average space utilization</p>
+                            </div>
+            
+                            <!-- Sales Trend Chart -->
+                            <div class="lg:col-span-2 bg-white rounded-lg border border-neutral-200/30 p-6 dark:bg-gray-900 dark:border-neutral-700/40" id="el-6mf8ft7z">
+                                <div class="flex justify-between items-center mb-4" id="el-kch80xyh">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white" id="el-sdjkb7vy">Sales Trend</h3>
+                                    <select class="text-sm border border-neutral-200/30 rounded-lg px-3 py-2 dark:bg-gray-700 dark:text-gray-100 dark:border-neutral-500" id="el-jflsebrb">
+                                        <option id="el-b1qk70ve">Last 7 days</option>
+                                        <option id="el-irnyho6y">Last 30 days</option>
+                                        <option id="el-8slu6na2">Last 90 days</option>
+                                    </select>
+                                </div>
+                                <div class="h-80 bg-neutral-50 rounded-lg border border-neutral-200/30 dark:bg-gray-800 dark:border-neutral-700/40" id="el-2zbz0zu7"></div>
+                            </div>
+            
+<!-- Top Products -->
+<div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-mj07z9r3">
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4" id="el-abwithfw">Top Products</h3>
+    <div class="space-y-4" id="el-fucyfj8v">
+        <div class="flex items-center justify-between" id="el-gde3e2qp">
+            <div class="flex items-center" id="el-b54oswgx">
+                <div class="w-2 h-2 bg-blue-600 rounded-full" id="el-y6e091j9"></div>
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300" id="el-l1aq72nu">Product A</span>
+            </div>
+            <span class="text-sm font-medium text-gray-900 dark:text-gray-100" id="el-01zpzqff">32%</span>
+        </div>
+        <div class="flex items-center justify-between" id="el-7d12q7hj">
+            <div class="flex items-center" id="el-tjiey0hy">
+                <div class="w-2 h-2 bg-green-600 rounded-full" id="el-r6t3zdtn"></div>
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300" id="el-wb3txsgw">Product B</span>
+            </div>
+            <span class="text-sm font-medium text-gray-900 dark:text-gray-100" id="el-gurkzq5y">28%</span>
+        </div>
+        <div class="flex items-center justify-between" id="el-62xsknki">
+            <div class="flex items-center" id="el-eveg1we7">
+                <div class="w-2 h-2 bg-purple-600 rounded-full" id="el-gfx12c18"></div>
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300" id="el-d42ivzbn">Product C</span>
+            </div>
+            <span class="text-sm font-medium text-gray-900 dark:text-gray-100" id="el-yu8hbpjz">24%</span>
+        </div>
+    </div>
+</div>
+    
+       
+          
+
+          <!-- Category Performance -->
+<div class="lg:col-span-3 bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-hps08524">
+    <div class="flex justify-between items-center mb-6" id="el-ce5sj355">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100" id="el-gh9bna72">Category Performance</h3>
+        <button class="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300" id="el-mu4x1w0h">Download Report</button>
+    </div>
+    <div class="overflow-x-auto" id="el-dze1cyp3">
+        <table class="w-full" id="el-t6b32qt8">
+            <thead id="el-d8cka5ec">
+                <tr class="text-left border-b border-neutral-200/30 dark:border-neutral-700" id="el-iyggsagu">
+                    <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-7m2qt802">Category</th>
+                    <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-jygmudxn">Revenue</th>
+                    <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-o2316ya4">Growth</th>
+                    <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-n80uxxxv">Shelf Space</th>
+                    <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-5m58wxpt">Status</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral-200/30 dark:divide-neutral-700" id="el-q3hyqlg6">
+                <tr id="el-5vahe6iq">
+                    <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-6lj7cwiw">Electronics</td>
+                    <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-mhnwfeqn">$245,678</td>
+                    <td class="py-4 text-sm text-green-600 dark:text-green-400" id="el-j1xwwizl">+15.8%</td>
+                    <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-goqplvmd">32%</td>
+                    <td class="py-4" id="el-nbun3lod"><span class="px-2 py-1 text-xs font-medium text-green-700 dark:text-green-500 bg-green-100 dark:bg-green-800 rounded-full" id="el-tb0axrzr">Optimal</span></td>
+                </tr>
+                <tr id="el-l5j1iyfe">
+                    <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-ogqjds75">Clothing</td>
+                    <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-v0rizjam">$189,432</td>
+                    <td class="py-4 text-sm text-red-600 dark:text-red-400" id="el-eups11ty">-2.4%</td>
+                    <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-15phba20">28%</td>
+                    <td class="py-4" id="el-u856ppqr"><span class="px-2 py-1 text-xs font-medium text-yellow-700 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-800 rounded-full" id="el-gml5pd9b">Review</span></td>
+                </tr>
+                <tr id="el-cyxgpzi6">
+                    <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-xrwvwlu2">Food &amp; Beverage</td>
+                    <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-8af5q83h">$156,789</td>
+                    <td class="py-4 text-sm text-green-600 dark:text-green-400" id="el-rdrfitm4">+8.3%</td>
+                    <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-gpy7ed6r">24%</td>
+                    <td class="py-4" id="el-hxq4fngu"><span class="px-2 py-1 text-xs font-medium text-green-700 dark:text-green-500 bg-green-100 dark:bg-green-800 rounded-full" id="el-laji76en">Optimal</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+      </div>
+    </section>
+    </htmlcode>
+                      </div>
+                    
+                      <div id="4c74b861-30f7-4bd3-92d1-6c1992abad84" data-section_id="4c74b861-30f7-4bd3-92d1-6c1992abad84" class="page_sectionHighlight__ahPeD sectionCode">
+                        <htmlcode id="el-hq73zm8j">
+    <section id="shelfpredictor" class="p-6 bg-white dark:bg-gray-800">
+      <div class="max-w-7xl mx-auto" id="el-aqx0ao4f">
+          <!-- Header -->
+          <div class="mb-8" id="el-xt2s6rr6">
+              <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100" id="el-poyk6y5z">Shelf Space Predictor</h2>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" id="el-adl5eb6u">Optimize your shelf space allocation based on AI-powered analytics</p>
+          </div>
+    
+          <!-- Control Panel -->
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8" id="el-d811y9d8">
+              <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-8vpeye1k">
+                  <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4" id="el-5mokbnif">Optimization Parameters</h3>
+                  <div class="space-y-4" id="el-kqlb0n5w">
+                      <div id="el-j4dth6vj">
+                          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1" id="el-qgc8ldye">Priority Factor</label>
+                          <select class="w-full border border-neutral-200/30 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100 dark:border-neutral-500" id="el-k9pbynr8">
+                              <option id="el-5516vhvn">Sales Volume</option>
+                              <option id="el-6u86tjuh">Profit Margin</option>
+                              <option id="el-jacr2vn4">Customer Demand</option>
+                          </select>
+                      </div>
+                      <div id="el-ws2alfws">
+                          <label class="block text-sm text-gray-600 mb-1 dark:text-gray-400" id="el-63gcn36l">Time Period</label>
+                          <select class="w-full border border-neutral-200/30 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100 dark:border-neutral-500" id="el-61mnhvom">
+                              <option id="el-0sd329nt">Last 30 days</option>
+                              <option id="el-b2jc89l9">Last 90 days</option>
+                              <option id="el-9m64f2fw">Last 180 days</option>
+                          </select>
+                      </div>
+                      <button class="w-full px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-lg text-sm font-medium hover:bg-blue-700" id="el-mu6wcp0t">
+                          Generate Prediction
+                      </button>
+                  </div>
+              </div>
+    
+              <!-- Prediction Results -->
+              <div class="lg:col-span-3 bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-dkr5xj9f">
+                <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4" id="el-l0rj9428">Predicted Space Allocation</h3>
+                <div class="h-64 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200/30 dark:border-neutral-600 rounded-lg mb-4" id="el-ipaa8yuq"></div>
+                <div class="grid grid-cols-3 gap-4 text-center" id="el-n0ocu7q5">
+                    <div class="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg" id="el-r3unes4m">
+                        <p class="text-sm text-gray-600 dark:text-gray-400" id="el-nsntrjf1">Efficiency Score</p>
+                        <p class="text-xl font-bold text-blue-600 dark:text-blue-400" id="el-i4micciy">94%</p>
+                    </div>
+                    <div class="p-4 bg-green-50 dark:bg-green-900 rounded-lg" id="el-kdngcdq3">
+                        <p class="text-sm text-gray-600 dark:text-gray-400" id="el-tta3sq8j">Revenue Impact</p>
+                        <p class="text-xl font-bold text-green-600 dark:text-green-400" id="el-zqat61e3">+18%</p>
+                    </div>
+                    <div class="p-4 bg-purple-50 dark:bg-purple-900 rounded-lg" id="el-pmlowzlq">
+                        <p class="text-sm text-gray-600 dark:text-gray-400" id="el-dpktpk4a">Space Utilized</p>
+                        <p class="text-xl font-bold text-purple-600 dark:text-purple-400" id="el-6ua8s5v1">92%</p>
+                    </div>
+                </div>
+            </div>
+            
+          </div>
+    
+          <!-- Detailed Recommendations -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-pr2cwc5q">
+            <div class="flex justify-between items-center mb-6" id="el-v6phyr17">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100" id="el-w3713d3j">Detailed Recommendations</h3>
+                <button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300" id="el-s53fuy12">Export PDF</button>
+            </div>
+            <div class="overflow-x-auto" id="el-ugjnfyma">
+                <table class="w-full" id="el-hu6cdfyq">
+                    <thead id="el-3bpjpzpi">
+                        <tr class="text-left border-b border-neutral-200/30 dark:border-neutral-600" id="el-wlatyijo">
+                            <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-300" id="el-6h1mmewi">Product Category</th>
+                            <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-300" id="el-9gs7fvu5">Current Space</th>
+                            <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-300" id="el-umusm6gf">Recommended Space</th>
+                            <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-300" id="el-k25x0v0s">Expected Impact</th>
+                            <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-300" id="el-v8lxs3wx">Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-neutral-200/30 dark:divide-neutral-600" id="el-60f9g5c3">
+                        <tr id="el-f270v7lz">
+                            <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-b0uiw9eu">Electronics</td>
+                            <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-ni1jdwzf">30%</td>
+                            <td class="py-4 text-sm text-blue-600 dark:text-blue-400" id="el-u7l90eov">35% (+5%)</td>
+                            <td class="py-4 text-sm text-green-600 dark:text-green-400" id="el-vtoas424">+12% Revenue</td>
+                            <td class="py-4" id="el-n19r34tg"><span class="px-2 py-1 text-xs font-medium text-red-700 bg-red-100 dark:text-red-100 dark:bg-red-600 rounded-full" id="el-jy0r4045">High</span></td>
+                        </tr>
+                        <tr id="el-mspirgrd">
+                            <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-kyf43p9h">Clothing</td>
+                            <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-sm4hk5au">25%</td>
+                            <td class="py-4 text-sm text-blue-600 dark:text-blue-400" id="el-bxalpxlr">22% (-3%)</td>
+                            <td class="py-4 text-sm text-green-600 dark:text-green-400" id="el-c7xufhnb">+5% Revenue</td>
+                            <td class="py-4" id="el-4kqk11b9"><span class="px-2 py-1 text-xs font-medium text-yellow-700 bg-yellow-100 dark:text-yellow-100 dark:bg-yellow-600 rounded-full" id="el-jzrzwvuq">Medium</span></td>
+                        </tr>
+                        <tr id="el-t8ejszcn">
+                            <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-5ymd79zo">Food &amp; Beverage</td>
+                            <td class="py-4 text-sm text-gray-700 dark:text-gray-300" id="el-i3lebzo7">45%</td>
+                            <td class="py-4 text-sm text-blue-600 dark:text-blue-400" id="el-1ivjxtny">43% (-2%)</td>
+                            <td class="py-4 text-sm text-green-600 dark:text-green-400" id="el-71yydsm9">+8% Revenue</td>
+                            <td class="py-4" id="el-wbxbmr3v"><span class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 dark:text-green-100 dark:bg-green-600 rounded-full" id="el-56kriiss">Low</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+
+
+
+      </div>
+    </section>
+    </htmlcode>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      <div id="9dfb46c0-a9d2-4e3e-9084-5b5e0462f8db" data-section_id="9dfb46c0-a9d2-4e3e-9084-5b5e0462f8db" class="page_sectionHighlight__ahPeD sectionCode">
+                        <htmlcode id="el-xpw7tkij">
+                          <section id="integration" class="p-6 bg-white dark:bg-gray-800">
+                            <div class="max-w-7xl mx-auto" id="el-7qc41to3">
+                              <div class="mb-8" id="el-7yurh9ns">
+                                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100" id="el-xzuabna1">API Integration</h2>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" id="el-nfitvztl">Connect your systems with our shelf space allocation API</p>
+                              </div>
+                          
+                              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="el-dob3goay">
+                                <!-- API Keys Section -->
+                                <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-q8e5qsmy">
+                                  <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4" id="el-bduplp2x">API Credentials</h3>
+                                  <div class="space-y-4" id="el-2g3p6fb6">
+                                    <div id="el-y0h0dtn8">
+                                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" id="el-ffmfa39k">API Key</label>
+                                      <div class="flex" id="el-u8hoqjl9">
+                                        <input type="text" value="sk_live_x892jf82j29f829f829" readonly="" class="flex-1 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200/30 dark:border-neutral-600 rounded-l-lg px-3 py-2 text-sm text-gray-500 dark:text-gray-300" id="el-t98qmz97">
+                                        <button class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-r-lg hover:bg-blue-700" id="el-yaofr8ct">Copy</button>
+                                      </div>
+                                    </div>
+                                    <div id="el-fqko8j8q">
+                                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" id="el-az6b03ny">Secret Key</label>
+                                      <div class="flex" id="el-vxhckz4k">
+                                        <input type="password" value="••••••••••••••••••••" readonly="" class="flex-1 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200/30 dark:border-neutral-600 rounded-l-lg px-3 py-2 text-sm text-gray-500 dark:text-gray-300" id="el-nwne8pf3">
+                                        <button class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-r-lg hover:bg-blue-700" id="el-b7fai3io">Show</button>
+                                      </div>
+                                    </div>
+                                    <button class="w-full px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-700 dark:text-blue-400 dark:border-blue-400" id="el-uvygfef8">
+                                      Regenerate Keys
+                                    </button>
+                                  </div>
+                                </div>
+                          
+                                <!-- Webhook Configuration -->
+                                <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-q1samg9v">
+                                  <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4" id="el-z5iqkgym">Webhook Settings</h3>
+                                  <div class="space-y-4" id="el-orlqgy0r">
+                                    <div id="el-aur2z6t2">
+                                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" id="el-8rkefbd8">Webhook URL</label>
+                                      <input type="url" placeholder="https://your-domain.com/webhook" class="w-full border border-neutral-200/30 dark:border-neutral-600 rounded-lg px-3 py-2 text-sm dark:bg-neutral-700 dark:text-gray-300" id="el-43t5cdil">
+                                    </div>
+                                    <div id="el-9v2jhuod">
+                                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" id="el-u54fv6by">Events to Trigger</label>
+                                      <div class="space-y-2" id="el-pczkyw98">
+                                        <label class="flex items-center" id="el-ch6qfo7v">
+                                          <input type="checkbox" class="rounded border-neutral-200/30 text-blue-600 dark:border-neutral-600 dark:text-blue-400" id="el-l66n7ada">
+                                          <span class="ml-2 text-sm text-gray-700 dark:text-gray-300" id="el-og4osf3r">Space Allocation Updates</span>
+                                        </label>
+                                        <label class="flex items-center" id="el-6ikew12u">
+                                          <input type="checkbox" class="rounded border-neutral-200/30 text-blue-600 dark:border-neutral-600 dark:text-blue-400" id="el-b9j5cc9d">
+                                          <span class="ml-2 text-sm text-gray-700 dark:text-gray-300" id="el-596eebdt">Inventory Changes</span>
+                                        </label>
+                                        <label class="flex items-center" id="el-izww32lo">
+                                          <input type="checkbox" class="rounded border-neutral-200/30 text-blue-600 dark:border-neutral-600 dark:text-blue-400" id="el-l0zcy1ya">
+                                          <span class="ml-2 text-sm text-gray-700 dark:text-gray-300" id="el-fkq04coa">Performance Alerts</span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <button class="w-full px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700" id="el-hsnak17a">
+                                      Save Webhook Settings
+                                    </button>
+                                  </div>
+                                </div>
+                          
+                                <!-- API Documentation -->
+                                <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-93hj5rsk">
+                                  <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4" id="el-28a46ro8">Quick Start Guide</h3>
+                                  <div class="space-y-4" id="el-vk46fh2t">
+                                    <div class="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4 border border-neutral-200/30 dark:border-neutral-600" id="el-c36yohfe">
+                                      <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" id="el-8myng6vx">Authentication</p>
+                                      <code class="block text-sm text-gray-600 dark:text-gray-300 bg-white dark:bg-neutral-800 p-3 rounded border border-neutral-200/30 dark:border-neutral-600" id="el-6eom91d6">
+                                        curl -X POST https://api.shelfspace.com/v1/allocate \<br id="el-n0ugorro">
+                                        &nbsp;&nbsp;-H "Authorization: Bearer YOUR_API_KEY" \<br id="el-snu3x38u">
+                                        &nbsp;&nbsp;-H "Content-Type: application/json" \<br id="el-9ekbx84x">
+                                        &nbsp;&nbsp;-d '{"store_id": "123", "category": "electronics"}'
+                                      </code>
+                                    </div>
+                                    <div class="flex justify-between items-center" id="el-oj5rdcgx">
+                                      <a href="#" class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400" id="el-xxu97zws">View Full Documentation</a>
+                                      <button class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700" id="el-ksrz9oh0">
+                                        Download SDK
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                          
+                                <!-- Integration Status -->
+                                <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-pn015580">
+                                  <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4" id="el-qxjmxkp3">Integration Status</h3>
+                                  <div class="overflow-x-auto" id="el-4qx4gx8p">
+                                    <table class="w-full" id="el-xe49uzy3">
+                                      <thead id="el-rr14x50m">
+                                        <tr class="text-left border-b border-neutral-200/30 dark:border-neutral-600" id="el-6fxsu3wn">
+                                          <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-e6uomxnz">Service</th>
+                                          <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-8fc8hnc6">Status</th>
+                                          <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-3h6uum8y">Last Sync</th>
+                                          <th class="pb-3 text-sm font-medium text-gray-500 dark:text-gray-400" id="el-fe9xgmgs">Actions</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody class="divide-y divide-neutral-200/30 dark:divide-neutral-600" id="el-j9av69xh">
+                                        <tr id="el-2qk4mxa5">
+                                          <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-wlafj0cq">Inventory System</td>
+                                          <td class="py-4" id="el-b0b5n60t"><span class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full dark:bg-green-800 dark:text-green-300" id="el-4j100cvu">Connected</span></td>
+                                          <td class="py-4 text-sm text-gray-700 dark:text-gray-400" id="el-7z8rxuh6">5 mins ago</td>
+                                          <td class="py-4" id="el-re1hw8lc"><button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-500" id="el-g3b8wj8t">Configure</button></td>
+                                        </tr>
+                                        <tr id="el-8jccymoh">
+                                          <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-ir3lkl1q">POS System</td>
+                                          <td class="py-4" id="el-475p2wff"><span class="px-2 py-1 text-xs font-medium text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-800 dark:text-yellow-300" id="el-62o1z25j">Pending</span></td>
+                                          <td class="py-4 text-sm text-gray-700 dark:text-gray-400" id="el-ii9vnjll">--</td>
+                                          <td class="py-4" id="el-ki5dm9x9"><button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-500" id="el-0yb15uzb">Connect</button></td>
+                                        </tr>
+                                        <tr id="el-a9lv8ly2">
+                                          <td class="py-4 text-sm text-gray-900 dark:text-gray-100" id="el-obpsfqet">Analytics Platform</td>
+                                          <td class="py-4" id="el-ttvf5dk1"><span class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full dark:bg-green-800 dark:text-green-300" id="el-jcty6123">Connected</span></td>
+                                          <td class="py-4 text-sm text-gray-700 dark:text-gray-400" id="el-hw7z3r33">1 hour ago</td>
+                                          <td class="py-4" id="el-mwu9k44v"><button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-500" id="el-c72wbpbf">Configure</button></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </htmlcode>
+                      </div>
+                      
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      
+<htmlcode>
+<section id="settings" class="p-6 dark:bg-gray-800">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Settings</h2>
+      <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Manage your account and application preferences</p>
+    </div>
+
+    <div class="space-y-6">
+      <!-- Profile Settings -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg border border-neutral-200/30 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Profile Settings</h3>
+        <div class="flex items-center mb-6">
+          <img src="https://avatar.iran.liara.run/public" alt="Profile" class="w-16 h-16 rounded-full transition-opacity duration-300 opacity-100" loading="lazy">
+          <div class="ml-4">
+            <button class="px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-600">
+              Change Photo
+            </button>
+            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG up to 2MB</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">First Name</label>
+            <input type="text" value="John" class="w-full border border-neutral-200/30 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Last Name</label>
+            <input type="text" value="Doe" class="w-full border border-neutral-200/30 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+            <input type="email" value="john@example.com" class="w-full border border-neutral-200/30 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone</label>
+            <input type="tel" value="+1 234 567 8900" class="w-full border border-neutral-200/30 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100">
+          </div>
+        </div>
+      </div>
+
+      <!-- Store Settings -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg border border-neutral-200/30 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Store Configuration</h3>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Store Name</label>
+            <input type="text" value="Main Street Store" class="w-full border border-neutral-200/30 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Time Zone</label>
+            <select class="w-full border border-neutral-200/30 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100">
+              <option>Eastern Time (ET)</option>
+              <option>Pacific Time (PT)</option>
+              <option>Central Time (CT)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Currency</label>
+            <select class="w-full border border-neutral-200/30 rounded-lg px-3 py-2 text-sm dark:bg-gray-700 dark:text-gray-100">
+              <option>USD ($)</option>
+              <option>EUR (€)</option>
+              <option>GBP (£)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notification Preferences -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg border border-neutral-200/30 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Notification Settings</h3>
+        <div class="space-y-3">
+          <label class="flex items-center justify-between">
+            <span class="text-sm text-gray-700 dark:text-gray-300">Email Notifications</span>
+            <div class="relative inline-block w-10 mr-2 align-middle select-none">
+              <input type="checkbox" checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer">
+              <label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+            </div>
+          </label>
+          <label class="flex items-center justify-between">
+            <span class="text-sm text-gray-700 dark:text-gray-300">Space Allocation Alerts</span>
+            <div class="relative inline-block w-10 mr-2 align-middle select-none">
+              <input type="checkbox" checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer">
+              <label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+            </div>
+          </label>
+          <label class="flex items-center justify-between">
+            <span class="text-sm text-gray-700 dark:text-gray-300">Performance Reports</span>
+            <div class="relative inline-block w-10 mr-2 align-middle select-none">
+              <input type="checkbox" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer">
+              <label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Security Settings -->
+      <div class="scr bg-white dark:bg-gray-700 rounded-lg border border-neutral-200/30 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Security</h3>
+        <div class="space-y-4">
+          <button class="w-full px-4 py-2 text-sm font-medium text-gray-700 border border-neutral-200/30 rounded-lg hover:bg-neutral-50 dark:text-gray-100 dark:hover:bg-gray-600 text-left flex justify-between items-center">
+            <span>Change Password</span>
+            <svg class="w-5 h-5 text-gray-400 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          <button class="w-full px-4 py-2 text-sm font-medium text-gray-700 border border-neutral-200/30 rounded-lg hover:bg-neutral-50 dark:text-gray-100 dark:hover:bg-gray-600 text-left flex justify-between items-center">
+            <span>Two-Factor Authentication</span>
+            <svg class="w-5 h-5 text-gray-400 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Save Button -->
+      <div class="flex justify-end">
+        <button class="px-6 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-700">
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+</htmlcode>
+</element><element id="6ec12ab6-7fe0-444b-a3c3-cd4fa5428406" data-section-id="6ec12ab6-7fe0-444b-a3c3-cd4fa5428406">
+    
+
+
+
+
+
+
+
+
+
+
+
+    <section id="documentation" class="p-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Documentation</h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+              Learn how to use our shelf space allocation system effectively
+            </p>
+          </div>
+      
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Documentation Sidebar -->
+            <div class="lg:col-span-1">
+              <div class="bg-white rounded-lg border border-neutral-200/30 p-4 dark:bg-neutral-800 dark:border-neutral-700">
+                <div class="space-y-2">
+                  <a
+                    href="#getting-started"
+                    class="block px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg dark:text-blue-400 dark:bg-blue-900"
+                  >
+                    Getting Started
+                  </a>
+                  <a
+                    href="#data-upload"
+                    class="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-neutral-50 rounded-lg dark:text-gray-300 dark:hover:bg-neutral-700"
+                  >
+                    Data Upload Guide
+                  </a>
+                  <a
+                    href="#analytics"
+                    class="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-neutral-50 rounded-lg dark:text-gray-300 dark:hover:bg-neutral-700"
+                  >
+                    Analytics Overview
+                  </a>
+                  <a
+                    href="#predictor"
+                    class="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-neutral-50 rounded-lg dark:text-gray-300 dark:hover:bg-neutral-700"
+                  >
+                    Shelf Predictor
+                  </a>
+                  <a
+                    href="#api-integration"
+                    class="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-neutral-50 rounded-lg dark:text-gray-300 dark:hover:bg-neutral-700"
+                  >
+                    API Integration
+                  </a>
+                  <a
+                    href="#faqs"
+                    class="block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-neutral-50 rounded-lg dark:text-gray-300 dark:hover:bg-neutral-700"
+                  >
+                    FAQs
+                  </a>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Documentation Content -->
+            <div class="lg:col-span-3">
+              <div class="bg-white rounded-lg border border-neutral-200/30 p-6 dark:bg-neutral-800 dark:border-neutral-700">
+                <div id="getting-started" class="space-y-6">
+                  <div class="pb-6 border-b border-neutral-200/30 dark:border-neutral-700">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Getting Started</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      Welcome to our shelf space allocation system. Follow these steps to get started:
+                    </p>
+                    <div class="space-y-4">
+                      <div class="flex">
+                        <div class="flex-shrink-0">
+                          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-semibold dark:bg-blue-900 dark:text-blue-400">
+                            1
+                          </div>
+                        </div>
+                        <div class="ml-4">
+                          <h4 class="text-sm font-medium text-gray-900 dark:text-white">Set Up Your Account</h4>
+                          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                            Configure your store settings and preferences in the Settings panel.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0">
+                          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-semibold dark:bg-blue-900 dark:text-blue-400">
+                            2
+                          </div>
+                        </div>
+                        <div class="ml-4">
+                          <h4 class="text-sm font-medium text-gray-900 dark:text-white">Upload Your Data</h4>
+                          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                            Import your historical sales data using our data upload tool.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0">
+                          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-semibold dark:bg-blue-900 dark:text-blue-400">
+                            3
+                          </div>
+                        </div>
+                        <div class="ml-4">
+                          <h4 class="text-sm font-medium text-gray-900 dark:text-white">Generate Predictions</h4>
+                          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                            Use our shelf predictor to get AI-powered space allocation recommendations.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="py-6 border-b border-neutral-200/30 dark:border-neutral-700">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Supported File Formats</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div class="p-4 bg-neutral-50 rounded-lg border border-neutral-200/30 dark:bg-neutral-800 dark:border-neutral-700">
+                        <div class="flex items-center">
+                          <svg
+                            class="w-6 h-6 text-green-600 dark:text-green-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                          </svg>
+                          <span class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                            CSV Files
+                          </span>
+                        </div>
+                      </div>
+                      <div class="p-4 bg-neutral-50 rounded-lg border border-neutral-200/30 dark:bg-neutral-800 dark:border-neutral-700">
+                        <div class="flex items-center">
+                          <svg
+                            class="w-6 h-6 text-green-600 dark:text-green-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                          </svg>
+                          <span class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                            Excel Files (.xlsx, .xls)
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="py-6">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Documentation Resources</h3>
+                    <div class="space-y-3">
+                      <a
+                        href="#"
+                        class="flex items-center p-3 bg-neutral-50 rounded-lg border border-neutral-200/30 hover:bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:bg-neutral-700"
+                      >
+                        <svg
+                          class="w-5 h-5 text-blue-600 dark:text-blue-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          ></path>
+                        </svg>
+                        <span class="ml-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                          Download User Guide (PDF)
+                        </span>
+                      </a>
+                      <a
+                        href="#"
+                        class="flex items-center p-3 bg-neutral-50 rounded-lg border border-neutral-200/30 hover:bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:bg-neutral-700"
+                      >
+                        <svg
+                          class="w-5 h-5 text-blue-600 dark:text-blue-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                          ></path>
+                        </svg>
+                        <span class="ml-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                          Watch Tutorials
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="reports" class="p-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Reports</h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">View and download detailed analytics reports</p>
+          </div>
+      
+          <!-- Report Filters -->
+          <div class="bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Date Range</label>
+                <select class="w-full border border-neutral-200/30 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded-lg px-3 py-2 text-sm dark:text-gray-300">
+                  <option>Last 7 Days</option>
+                  <option>Last 30 Days</option>
+                  <option>Last 90 Days</option>
+                  <option>Custom Range</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category</label>
+                <select class="w-full border border-neutral-200/30 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded-lg px-3 py-2 text-sm dark:text-gray-300">
+                  <option>All Categories</option>
+                  <option>Electronics</option>
+                  <option>Clothing</option>
+                  <option>Food &amp; Beverage</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Report Type</label>
+                <select class="w-full border border-neutral-200/30 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded-lg px-3 py-2 text-sm dark:text-gray-300">
+                  <option>Space Utilization</option>
+                  <option>Sales Performance</option>
+                  <option>Inventory Turnover</option>
+                </select>
+              </div>
+              <div class="flex items-end">
+                <button class="w-full px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                  Generate Report
+                </button>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Recent Reports -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Space Utilization Report</h3>
+              <div class="h-48 bg-neutral-50 dark:bg-neutral-900 rounded-lg border border-neutral-200/30 dark:border-neutral-700 mb-4"></div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500 dark:text-gray-400">Generated today</span>
+                <button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-600">Download PDF</button>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Sales Performance Report</h3>
+              <div class="h-48 bg-neutral-50 dark:bg-neutral-900 rounded-lg border border-neutral-200/30 dark:border-neutral-700 mb-4"></div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500 dark:text-gray-400">Generated yesterday</span>
+                <button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-600">Download PDF</button>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Inventory Turnover Report</h3>
+              <div class="h-48 bg-neutral-50 dark:bg-neutral-900 rounded-lg border border-neutral-200/30 dark:border-neutral-700 mb-4"></div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500 dark:text-gray-400">Generated 3 days ago</span>
+                <button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-600">Download PDF</button>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Report History -->
+          <div class="bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700">
+            <div class="px-6 py-4 border-b border-neutral-200/30 dark:border-neutral-700">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Report History</h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead>
+                  <tr class="text-left bg-neutral-50 dark:bg-neutral-900">
+                    <th class="px-6 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Report Name</th>
+                    <th class="px-6 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Type</th>
+                    <th class="px-6 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Generated</th>
+                    <th class="px-6 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Status</th>
+                    <th class="px-6 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-neutral-200/30 dark:divide-neutral-700">
+                  <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">Q4 Space Analysis</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">Space Utilization</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">2024-01-15</td>
+                    <td class="px-6 py-4">
+                      <span class="px-2 py-1 text-xs font-medium text-green-700 dark:text-green-600 bg-green-100 dark:bg-green-900 rounded-full">Completed</span>
+                    </td>
+                    <td class="px-6 py-4">
+                      <button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-600">Download</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">Monthly Performance</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">Sales Performance</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">2024-01-14</td>
+                    <td class="px-6 py-4">
+                      <span class="px-2 py-1 text-xs font-medium text-green-700 dark:text-green-600 bg-green-100 dark:bg-green-900 rounded-full">Completed</span>
+                    </td>
+                    <td class="px-6 py-4">
+                      <button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-600">Download</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">Inventory Analysis</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">Inventory Turnover</td>
+                    <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">2024-01-13</td>
+                    <td class="px-6 py-4">
+                      <span class="px-2 py-1 text-xs font-medium text-green-700 dark:text-green-600 bg-green-100 dark:bg-green-900 rounded-full">Completed</span>
+                    </td>
+                    <td class="px-6 py-4">
+                      <button class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-500 dark:hover:text-blue-600">Download</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      </element>
+              <div id="page_complete">
+              <script>
+                  console.log('Page complete');
+              </script>
+              
+              
+            </div><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body>
+    
+    
+
+
+
+
+            <script src="different.js"></script>
+
+</html>

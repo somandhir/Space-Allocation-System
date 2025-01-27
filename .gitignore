@@ -1,0 +1,27 @@
+# Node.js specific
+node_modules/       # Node modules folder (heavy and regenerated via `npm install`)
+.env                # Environment variables (API keys, secrets, etc.)
+npm-debug.log*      # NPM debug logs
+yarn-debug.log*     # Yarn debug logs
+yarn-error.log*     # Yarn error logs
+
+# Logs
+logs/
+*.log
+logs/*.log
+
+# System-specific files
+.DS_Store           # macOS file
+Thumbs.db           # Windows file
+
+# IDE-specific files
+.vscode/            # Visual Studio Code settings
+.idea/              # JetBrains IDE settings
+*.iml               # IntelliJ project files
+
+# Build output
+dist/               # Distribution or build folder (if applicable)
+build/              # Build folder for React/Vue/etc.
+
+# Uploaded files (optional)
+uploads/            # Prevent uploading user-generated files if applicable
