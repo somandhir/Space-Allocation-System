@@ -1,0 +1,101 @@
+item_id,item_name,price,margin,entry_date,stock,vendor,type
+1,Apple,0.50,0.20,2023-10-01,100,FruitSupplier,Fruit
+2,Banana,0.30,0.10,2023-10-01,150,FruitSupplier,Fruit
+3,Carrot,0.20,0.05,2023-10-01,200,VegetableSupplier,Vegetable
+4,Dates,1.50,0.50,2023-10-01,50,DryFruitSupplier,Dry Fruit
+5,Eggplant,0.80,0.30,2023-10-01,80,VegetableSupplier,Vegetable
+6,Fig,1.20,0.40,2023-10-01,60,DryFruitSupplier,Dry Fruit
+7,Grapes,2.00,0.70,2023-10-01,90,FruitSupplier,Fruit
+8,Honeydew,3.00,1.00,2023-10-01,40,FruitSupplier,Fruit
+9,Iceberg Lettuce,1.00,0.30,2023-10-01,70,VegetableSupplier,Vegetable
+10,Jackfruit,2.50,0.80,2023-10-01,30,FruitSupplier,Fruit
+11,Kiwi,1.50,0.50,2023-10-01,100,FruitSupplier,Fruit
+12,Lemon,0.60,0.20,2023-10-01,150,FruitSupplier,Fruit
+13,Mango,1.80,0.60,2023-10-01,200,FruitSupplier,Fruit
+14,Nectarine,2.20,0.70,2023-10-01,50,FruitSupplier,Fruit
+15,Orange,0.70,0.25,2023-10-01,80,FruitSupplier,Fruit
+16,Papaya,1.00,0.35,2023-10-01,60,FruitSupplier,Fruit
+17,Quince,1.70,0.55,2023-10-01,90,FruitSupplier,Fruit
+18,Raspberry,2.50,0.90,2023-10-01,40,FruitSupplier,Fruit
+19,Strawberry,2.00,0.70,2023-10-01,70,FruitSupplier,Fruit
+20,Tomato,0.50,0.15,2023-10-01,100,VegetableSupplier,Vegetable
+21,Ugli Fruit,3.00,1.00,2023-10-01,30,FruitSupplier,Fruit
+22,Vanilla Bean,4.00,1.50,2023-10-01,20,SpiceSupplier,Spice
+23,Watermelon,3.50,1.20,2023-10-01,50,FruitSupplier,Fruit
+24,Xigua,2.80,1.00,2023-10-01,40,FruitSupplier,Fruit
+25,Yam,1.00,0.30,2023-10-01,70,VegetableSupplier,Vegetable
+26,Zucchini,0.80,0.25,2023-10-01,80,VegetableSupplier,Vegetable
+27,Almond,5.00,2.00,2023-10-01,100,DryFruitSupplier,Dry Fruit
+28,Beetroot,0.60,0.20,2023-10-01,150,VegetableSupplier,Vegetable
+29,Cabbage,0.40,0.15,2023-10-01,200,VegetableSupplier,Vegetable
+30,Chicken Breast,5.00,1.50,2023-10-01,50,MeatSupplier,Meat
+31,Salmon Fillet,10.00,3.00,2023-10-01,30,SeafoodSupplier,Seafood
+32,Milk,1.20,0.30,2023-10-01,100,DairySupplier,Dairy
+33,Cheddar Cheese,3.00,1.00,2023-10-01,80,DairySupplier,Dairy
+34,Whole Wheat Bread,2.00,0.50,2023-10-01,150,BakerySupplier,Bakery
+35,Butter,2.50,0.80,2023-10-01,60,DairySupplier,Dairy
+36,Olive Oil,8.00,2.50,2023-10-01,40,OilSupplier,Oil
+37,Peanut Butter,3.50,1.20,2023-10-01,70,SpreadSupplier,Spread
+38,Orange Juice,3.00,1.00,2023-10-01,90,BeverageSupplier,Beverage
+39,Coffee,10.00,3.50,2023-10-01,50,BeverageSupplier,Beverage
+40,Green Tea,5.00,1.50,2023-10-01,80,BeverageSupplier,Beverage
+41,Shampoo,4.00,1.50,2023-10-01,100,PersonalCareSupplier,Personal Care
+42,Toothpaste,2.50,0.80,2023-10-01,120,PersonalCareSupplier,Personal Care
+43,Laundry Detergent,8.00,2.00,2023-10-01,60,HouseholdSupplier,Household
+44,Paper Towels,1.50,0.50,2023-10-01,200,HouseholdSupplier,Household
+45,Toilet Paper,0.80,0.30,2023-10-01,300,HouseholdSupplier,Household
+46,Hand Sanitizer,3.00,1.00,2023-10-01,100,PersonalCareSupplier,Personal Care
+47,Disinfectant Spray,5.00,1.50,2023-10-01,80,HouseholdSupplier,Household
+48,Dog Food,20.00,5.00,2023-10-01,40,PetSupplier,Pet
+49,Cat Litter,10.00,3.00,2023-10-01,50,PetSupplier,Pet
+50,Light Bulbs,2.00,0.70,2023-10-01,100,ElectronicsSupplier,Electronics
+51,Batteries,5.00,1.50,2023-10-01,80,ElectronicsSupplier,Electronics
+52,Notebook,1.50,0.50,2023-10-01,150,StationerySupplier,Stationery
+53,Pen,0.50,0.20,2023-10-01,300,StationerySupplier,Stationery
+54,Printer Paper,5.00,1.00,2023-10-01,100,StationerySupplier,Stationery
+55,Face Mask,1.00,0.30,2023-10-01,200,PersonalCareSupplier,Personal Care
+56,Hand Wash,2.00,0.70,2023-10-01,150,PersonalCareSupplier,Personal Care
+57,Body Lotion,4.00,1.50,2023-10-01,100,PersonalCareSupplier,Personal Care
+58,Hair Oil,3.00,1.00,2023-10-01,80,PersonalCareSupplier,Personal Care
+59,Conditioner,2.50,0.90,2023-10-01,120,PersonalCareSupplier,Personal Care
+60,Shaving Cream,2.00,0.70,2023-10-01,100,PersonalCareSupplier,Personal Care
+61,Deodorant,3.00,1.00,2023-10-01,90,PersonalCareSupplier,Personal Care
+62,Perfume,5.00,2.00,2023-10-01,50,PersonalCareSupplier,Personal Care
+63,Hand Cream,2.50,0.90,2023-10-01,80,PersonalCareSupplier,Personal Care
+64,Foot Cream,3.00,1.00,2023-10-01,60,PersonalCareSupplier,Personal Care
+65,Face Wash,2.00,0.70,2023-10-01,100,PersonalCareSupplier,Personal Care
+66,Body Wash,3.50,1.20,2023-10-01,90,PersonalCareSupplier,Personal Care
+67,Hair Gel,2.00,0.70,2023-10-01,80,PersonalCareSupplier,Personal Care
+68,Hair Spray,3.00,1.00,2023-10-01,70,PersonalCareSupplier,Personal Care
+69,Shower Cap,1.50,0.50,2023-10-01,100,PersonalCareSupplier,Personal Care
+70,Bath Sponge,1.00,0.30,2023-10-01,150,PersonalCareSupplier,Personal Care
+71,Loofah,2.50,0.90,2023-10-01,80,PersonalCareSupplier,Personal Care
+72,Body Scrub,3.00,1.00,2023-10-01,60,PersonalCareSupplier,Personal Care
+73,Face Scrub,2.00,0.70,2023-10-01,100,PersonalCareSupplier,Personal Care
+74,Hand Towel,1.00,0.35,2023-10-01,200,HouseholdSupplier,Household
+75,Bath Towel,2.00,0.70,2023-10-01,150,HouseholdSupplier,Household
+76,Wash Cloth,1.50,0.50,2023-10-01,100,HouseholdSupplier,Household
+77,Bath Mat,3.00,1.00,2023-10-01,80,HouseholdSupplier,Household
+78,Shower Curtain,4.00,1.50,2023-10-01,60,HouseholdSupplier,Household
+79,Toilet Paper,0.80,0.30,2023-10-01,300,HouseholdSupplier,Household
+80,Paper Towel,1.50,0.50,2023-10-01,200,HouseholdSupplier,Household
+81,Trash Bag,3.00,1.00,2023-10-01,100,HouseholdSupplier,Household
+82,Aluminum Foil,2.50,0.90,2023-10-01,80,HouseholdSupplier,Household
+83,Plastic Wrap,3.00,1.00,2023-10-01,60,HouseholdSupplier,Household
+84,Wax Paper,2.00,0.70,2023-10-01,100,HouseholdSupplier,Household
+85,Parchment Paper,3.50,1.20,2023-10-01,90,HouseholdSupplier,Household
+86,Freezer Bag,2.00,0.70,2023-10-01,80,HouseholdSupplier,Household
+87,Storage Bag,3.00,1.00,2023-10-01,60,HouseholdSupplier,Household
+88,Snack Bag,1.50,0.50,2023-10-01,100,HouseholdSupplier,Household
+89,Sandwich Bag,1.00,0.30,2023-10-01,150,HouseholdSupplier,Household
+90,Vacuum Bag,3.00,1.00,2023-10-01,80,HouseholdSupplier,Household
+91,Compost Bag,2.50,0.90,2023-10-01,60,HouseholdSupplier,Household
+92,Green Tea,5.00,1.50,2023-10-01,80,BeverageSupplier,Beverage
+93,Protein Shake,3.50,1.20,2023-10-01,150,HealthDrinkSupplier,Health Drink
+94,Energy Bar,1.50,0.50,2023-10-01,200,HealthSnackSupplier,Health Snack
+95,Multivitamin,5.00,2.00,2023-10-01,50,HealthSupplementSupplier,Health Supplement
+96,Shampoo,4.00,1.50,2023-10-01,80,GeneralUseSupplier,General Use
+97,Toothpaste,2.00,0.70,2023-10-01,60,GeneralUseSupplier,General Use
+98,Soap,1.00,0.30,2023-10-01,90,GeneralUseSupplier,General Use
+99,Hand Sanitizer,3.00,1.00,2023-10-01,40,GeneralUseSupplier,General Use
+100,Detergent,2.50,0.80,2023-10-01,70,GeneralUseSupplier,General Use
