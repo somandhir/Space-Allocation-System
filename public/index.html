@@ -355,28 +355,51 @@
                                         </svg>
                                     </div>
                                     <div id="el-oo5avjxm">
-                                      <div>
-                                        <label class="relative cursor-pointer">
-                                          <input
-                                            type="file"
-                                            class="hidden"
-                                            accept=".csv, .xlsx, .xls"
-                                            id="fileInput"
-                                          />
-                                          <span
-                                            class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                            id="uploadButton"
-                                          >
-                                            Choose File
-                                          </span>
-                                        </label>
-                                        <span id="fileName" class="ml-4 text-gray-600 italic"></span>
-                                        <button
-                                          class="inline-flex items-center px-6 py-3 mt-4 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                                          id="submitButton"
-                                        >
-                                          Upload File
-                                        </button>
+                                      
+                                      <div class="max-w-lg mx-auto p-8 bg-white rounded-lg shadow-lg">
+                                        <h2 class="text-xl font-semibold text-gray-800 mb-6 text-center">Upload Data</h2>
+                                      
+                                        <form id="dataForm" enctype="multipart/form-data" class="space-y-4">
+                                          <!-- Name Field -->
+                                          <div>
+                                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                            <input type="text" id="name" name="name" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                          </div>
+                                      
+                                          <!-- Cost Field -->
+                                          <div>
+                                            <label for="cost" class="block text-sm font-medium text-gray-700">Cost</label>
+                                            <input type="text" id="cost" name="cost" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                          </div>
+                                      
+                                          <!-- Profit Field -->
+                                          <div>
+                                            <label for="profit" class="block text-sm font-medium text-gray-700">Profit</label>
+                                            <input type="text" id="profit" name="profit" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                          </div>
+                                      
+                                          <!-- Date Field -->
+                                          <div>
+                                            <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
+                                            <input type="text" id="date" name="date" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                          </div>
+                                      
+                                          <!-- File Upload -->
+                                          <div class="flex flex-col items-center">
+                                            <label class="relative cursor-pointer w-full">
+                                              <input type="file" class="hidden" id="fileInput" name="csvFile" accept=".csv">
+                                              <span class="block w-full text-center px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                                Choose File
+                                              </span>
+                                            </label>
+                                            <span id="fileName" class="mt-2 text-gray-600 italic">No file chosen</span>
+                                          </div>
+                                      
+                                          <!-- Submit Button -->
+                                          <button id="submitButton" type="submit" class="w-full px-6 py-3 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                            Submit
+                                          </button>
+                                        </form>
                                       </div>
                                       <script>
                                         const fileInput = document.getElementById("fileInput");
@@ -386,25 +409,24 @@
                                         // Display the selected file name
                                         fileInput.addEventListener("change", () => {
                                           const file = fileInput.files[0];
-                                          if (file) {
-                                            fileNameDisplay.textContent = `Selected: ${file.name}`;
-                                          } else {
-                                            fileNameDisplay.textContent = "No file chosen";
-                                          }
+                                          fileNameDisplay.textContent = file ? `Selected: ${file.name}` : "No file chosen";
                                         });
                                       
                                         // Handle file upload
                                         submitButton.addEventListener("click", (event) => {
-                                          event.preventDefault(); // Prevent form submission if you later wrap this in a <form>
+                                          event.preventDefault(); // Prevents actual form submission
+                                      
                                           const file = fileInput.files[0];
                                           if (file) {
                                             alert(`Uploading: ${file.name}`);
-                                            // Add your file upload logic here, e.g., uploading to a server
+                                            // Add your file upload logic here (AJAX, Fetch API, etc.)
                                           } else {
                                             alert("Please choose a file before uploading.");
                                           }
                                         });
                                       </script>
+                                      
+
                                       
                                     </div>
                                     <p class="text-sm text-gray-500 dark:text-gray-400" id="el-sj4z0cph">or drag and drop</p>
