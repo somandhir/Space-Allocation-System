@@ -14,7 +14,8 @@
     <!-- Performance optimization: Preload critical resources -->
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" as="style">
-   
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.js"></script>
@@ -241,51 +242,121 @@
                 </div>
           
                 <!-- Analytics Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                    <!-- Sales Performance Card -->
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Sales Performance</h3>
-                        <div class="h-48 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg flex items-center justify-center">
-                            <!-- Placeholder for sales graph -->
-                            <div class="w-full h-40 bg-opacity-50 rounded flex items-end justify-around px-4">
-                                <div class="w-4 bg-blue-500 rounded-t" style="height: 60%"></div>
-                                <div class="w-4 bg-blue-500 rounded-t" style="height: 80%"></div>
-                                <div class="w-4 bg-blue-500 rounded-t" style="height: 40%"></div>
-                                <div class="w-4 bg-blue-500 rounded-t" style="height: 90%"></div>
-                                <div class="w-4 bg-blue-500 rounded-t" style="height: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="max-w-6xl mx-auto">
+                  <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Space Allocation Dashboard</h2>
           
-                    <!-- Shelf Space Utilization -->
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Shelf Space Utilization</h3>
-                        <div class="h-48 bg-gradient-to-r from-green-50 to-green-100 rounded-lg flex items-center justify-center">
-                            <!-- Placeholder for utilization chart -->
-                            <div class="relative w-32 h-32 rounded-full bg-gradient-to-tr from-green-500 via-blue-500 to-purple-500 flex items-center justify-center">
-                                <!-- Inner Content -->
-                                <div class="absolute w-20 h-20 rounded-full bg-white flex items-center justify-center">
-                                  <span class="text-sm font-bold text-gray-700">85%</span>
-                                </div>
-                              </div>
-                                                            
-                        </div>
-                    </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                      <!-- Sales Performance Bar Chart -->
+                      <div class="bg-white p-6 rounded-xl shadow-md">
+                          <h3 class="text-lg font-semibold text-gray-800 mb-4">Sales Performance</h3>
+                          <div class="h-48 flex items-center justify-center">
+                              <canvas id="salesBarChart"></canvas>
+                          </div>
+                      </div>
           
-                    <!-- Revenue Forecast -->
-                    <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Revenue Forecast</h3>
-                        <div class="h-48 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg flex items-center justify-center">
-                            <!-- Placeholder for forecast line chart -->
-                            <div class="w-full h-40 flex items-center">
-                                <svg class="w-full h-24" viewBox="0 0 100 30">
-                                    <path d="M 0 30 L 20 20 L 40 25 L 60 15 L 80 5 L 100 10" fill="none" stroke="#8B5CF6" stroke-width="2"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                      <!-- Shelf Space Utilization Pie Chart -->
+                      <div class="bg-white p-6 rounded-xl shadow-md">
+                          <h3 class="text-lg font-semibold text-gray-800 mb-4">Shelf Space Utilization</h3>
+                          <div class="h-48 flex items-center justify-center">
+                              <canvas id="shelfSpacePieChart"></canvas>
+                          </div>
+                      </div>
           
+                      <!-- Revenue Forecast Line Chart -->
+                      <div class="bg-white p-6 rounded-xl shadow-md">
+                          <h3 class="text-lg font-semibold text-gray-800 mb-4">Revenue Forecast</h3>
+                          <div class="h-48 flex items-center justify-center">
+                              <canvas id="salesLineChart"></canvas>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          
+              <script>
+                  // Data from your JSON object
+                  const data = [
+                      { "buy": 83, "name": 4, "predicted_sales": 21.05, "profit": 22, "shelf_space_percentage": 0.2706, "time": 1703903469 },
+                      { "buy": 31, "name": 2, "predicted_sales": 14.67, "profit": 15, "shelf_space_percentage": 0.1886, "time": 1617031358 },
+                      { "buy": 64, "name": 2, "predicted_sales": 26.02, "profit": 27, "shelf_space_percentage": 0.3344, "time": 1662624999 },
+                      { "buy": 82, "name": 1, "predicted_sales": 11.14, "profit": 11, "shelf_space_percentage": 0.1433, "time": 1600252111 },
+                      { "buy": 20, "name": 3, "predicted_sales": 12.85, "profit": 13, "shelf_space_percentage": 0.1652, "time": 1621110538 },
+                      { "buy": 75, "name": 4, "predicted_sales": 23.89, "profit": 25, "shelf_space_percentage": 0.3071, "time": 1666170182 },
+                      { "buy": 55, "name": 4, "predicted_sales": 24.87, "profit": 26, "shelf_space_percentage": 0.3197, "time": 1701307236 }
+                  ];
+          
+                  // Extract unique item names
+                  const itemNames = [...new Set(data.map(item => `Item ${item.name}`))];
+          
+                  // 1. Sales Performance Bar Chart (Total Units Bought by Item Name)
+                  const salesBarChart = document.getElementById('salesBarChart').getContext('2d');
+                  new Chart(salesBarChart, {
+                      type: 'bar',
+                      data: {
+                          labels: itemNames,
+                          datasets: [{
+                              label: 'Units Purchased (Buy)',
+                              data: data.map(item => item.buy),
+                              backgroundColor: '#4CAF50',
+                              borderColor: '#388E3C',
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          responsive: true,
+                          scales: {
+                              y: { beginAtZero: true }
+                          }
+                      }
+                  });
+          
+                  // 2. Shelf Space Utilization Pie Chart
+                  const shelfSpacePieChart = document.getElementById('shelfSpacePieChart').getContext('2d');
+                  new Chart(shelfSpacePieChart, {
+                      type: 'pie',
+                      data: {
+                          labels: itemNames,
+                          datasets: [{
+                              label: 'Shelf Space Utilization',
+                              data: data.map(item => item.shelf_space_percentage * 100),
+                              backgroundColor: ['#FF6347', '#FFD700', '#90EE90', '#87CEFA', '#FF69B4'],
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          responsive: true
+                      }
+                  });
+          
+                  // 3. Revenue Forecast Line Chart (Predicted Sales over Time)
+                  const salesLineChart = document.getElementById('salesLineChart').getContext('2d');
+                  new Chart(salesLineChart, {
+                      type: 'line',
+                      data: {
+                          labels: data.map(item => new Date(item.time * 1000).toLocaleDateString()),
+                          datasets: [{
+                              label: 'Predicted Sales',
+                              data: data.map(item => item.predicted_sales),
+                              fill: false,
+                              borderColor: '#8B5CF6',
+                              tension: 0.1
+                          }]
+                      },
+                      options: {
+                          responsive: true,
+                          scales: {
+                              x: {
+                                  ticks: {
+                                      maxRotation: 45,
+                                      minRotation: 0
+                                  }
+                              }
+                          }
+                      }
+                  });
+              </script>
+              
+              
+              
                 <!-- CTA Section -->
                 <div class="text-center">
                     <button class="px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
@@ -492,19 +563,75 @@
                                 <p class="mt-2 text-3xl font-bold text-purple-600" id="el-gotrqrks">87%</p>
                                 <p class="text-sm text-gray-500 mt-1 dark:text-gray-400" id="el-6e33w4ow">Average space utilization</p>
                             </div>
-            
-                            <!-- Sales Trend Chart -->
-                            <div class="lg:col-span-2 bg-white rounded-lg border border-neutral-200/30 p-6 dark:bg-gray-900 dark:border-neutral-700/40" id="el-6mf8ft7z">
-                                <div class="flex justify-between items-center mb-4" id="el-kch80xyh">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white" id="el-sdjkb7vy">Sales Trend</h3>
-                                    <select class="text-sm border border-neutral-200/30 rounded-lg px-3 py-2 dark:bg-gray-700 dark:text-gray-100 dark:border-neutral-500" id="el-jflsebrb">
-                                        <option id="el-b1qk70ve">Last 7 days</option>
-                                        <option id="el-irnyho6y">Last 30 days</option>
-                                        <option id="el-8slu6na2">Last 90 days</option>
-                                    </select>
-                                </div>
-                                <div class="h-80 bg-neutral-50 rounded-lg border border-neutral-200/30 dark:bg-gray-800 dark:border-neutral-700/40" id="el-2zbz0zu7"></div>
-                            </div>
+                            <div class="bg-gray-100 dark:bg-gray-900 p-6">
+                            <div class="max-w-4xl mx-auto">
+                              <!-- Sales Trend Chart -->
+                              <div class="lg:col-span-2 bg-white rounded-lg border border-neutral-200/30 p-6 dark:bg-gray-900 dark:border-neutral-700/40">
+                                  <div class="flex justify-between items-center mb-4">
+                                      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Sales Trend</h3>
+                                      <select id="salesRange" class="text-sm border border-neutral-200/30 rounded-lg px-3 py-2 dark:bg-gray-700 dark:text-gray-100 dark:border-neutral-500">
+                                          <option value="7">Last 7 days</option>
+                                          <option value="30">Last 30 days</option>
+                                          <option value="90">Last 90 days</option>
+                                      </select>
+                                  </div>
+                                  <div class="h-80 bg-neutral-50 rounded-lg border border-neutral-200/30 dark:bg-gray-800 dark:border-neutral-700/40 flex items-center justify-center">
+                                      <canvas id="salesTrendChart"></canvas>
+                                  </div>
+                              </div>
+                          </div>
+                          </div>
+                          <script>
+                            // Simulated sales data for different time ranges
+                            const salesData = {
+                                7: {
+                                    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+                                    values: [120, 150, 180, 220, 300, 260, 310]
+                                },
+                                30: {
+                                    labels: Array.from({length: 30}, (_, i) => `Day ${i + 1}`),
+                                    values: Array.from({length: 30}, () => Math.floor(Math.random() * 300) + 100)
+                                },
+                                90: {
+                                    labels: Array.from({length: 90}, (_, i) => `Day ${i + 1}`),
+                                    values: Array.from({length: 90}, () => Math.floor(Math.random() * 400) + 150)
+                                }
+                            };
+                    
+                            // Initialize Chart.js
+                            const ctx = document.getElementById('salesTrendChart').getContext('2d');
+                            let salesChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: salesData[7].labels,
+                                    datasets: [{
+                                        label: 'Sales Trend',
+                                        data: salesData[7].values,
+                                        fill: false,
+                                        borderColor: '#4F46E5',
+                                        backgroundColor: '#6366F1',
+                                        tension: 0.3
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                    
+                            // Update chart when dropdown changes
+                            document.getElementById('salesRange').addEventListener('change', function () {
+                                const selectedRange = this.value;
+                                salesChart.data.labels = salesData[selectedRange].labels;
+                                salesChart.data.datasets[0].data = salesData[selectedRange].values;
+                                salesChart.update();
+                            });
+                        </script>
+                    
             
 <!-- Top Products -->
 <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-mj07z9r3">
@@ -622,25 +749,63 @@
                   </div>
               </div>
     
-              <!-- Prediction Results -->
-              <div class="lg:col-span-3 bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6" id="el-dkr5xj9f">
-                <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4" id="el-l0rj9428">Predicted Space Allocation</h3>
-                <div class="h-64 bg-neutral-50 dark:bg-neutral-700 border border-neutral-200/30 dark:border-neutral-600 rounded-lg mb-4" id="el-ipaa8yuq"></div>
-                <div class="grid grid-cols-3 gap-4 text-center" id="el-n0ocu7q5">
-                    <div class="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg" id="el-r3unes4m">
-                        <p class="text-sm text-gray-600 dark:text-gray-400" id="el-nsntrjf1">Efficiency Score</p>
-                        <p class="text-xl font-bold text-blue-600 dark:text-blue-400" id="el-i4micciy">94%</p>
-                    </div>
-                    <div class="p-4 bg-green-50 dark:bg-green-900 rounded-lg" id="el-kdngcdq3">
-                        <p class="text-sm text-gray-600 dark:text-gray-400" id="el-tta3sq8j">Revenue Impact</p>
-                        <p class="text-xl font-bold text-green-600 dark:text-green-400" id="el-zqat61e3">+18%</p>
-                    </div>
-                    <div class="p-4 bg-purple-50 dark:bg-purple-900 rounded-lg" id="el-pmlowzlq">
-                        <p class="text-sm text-gray-600 dark:text-gray-400" id="el-dpktpk4a">Space Utilized</p>
-                        <p class="text-xl font-bold text-purple-600 dark:text-purple-400" id="el-6ua8s5v1">92%</p>
-                    </div>
-                </div>
+              <div class="max-w-4xl mx-auto">
+                <!-- Prediction Results -->
+                <div class="lg:col-span-3 bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700 p-6">
+                  <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">Predicted Space Allocation</h3>
+                  
+                  <!-- Full-width Pie Chart Container -->
+                  <div class="w-full h-[350px] bg-white dark:bg-neutral-700 border border-neutral-200/30 dark:border-neutral-600 rounded-lg mb-4 flex items-center justify-center p-4">
+                      <canvas id="spaceAllocationChart"></canvas>
+                  </div>
+  
+                  <!-- Efficiency, Revenue Impact, and Space Utilization -->
+                  <div class="grid grid-cols-3 gap-4 text-center">
+                      <div class="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg">
+                          <p class="text-sm text-gray-600 dark:text-gray-400">Efficiency Score</p>
+                          <p class="text-xl font-bold text-blue-600 dark:text-blue-400">94%</p>
+                      </div>
+                      <div class="p-4 bg-green-50 dark:bg-green-900 rounded-lg">
+                          <p class="text-sm text-gray-600 dark:text-gray-400">Revenue Impact</p>
+                          <p class="text-xl font-bold text-green-600 dark:text-green-400">+18%</p>
+                      </div>
+                      <div class="p-4 bg-purple-50 dark:bg-purple-900 rounded-lg">
+                          <p class="text-sm text-gray-600 dark:text-gray-400">Space Utilized</p>
+                          <p class="text-xl font-bold text-purple-600 dark:text-purple-400">92%</p>
+                      </div>
+                  </div>
+              </div>
             </div>
+        
+            <script>
+                // Simulated space allocation data
+                const spaceAllocationData = {
+                    labels: ['Category A', 'Category B', 'Category C', 'Category D', 'Category E'],
+                    datasets: [{
+                        data: [25, 30, 20, 15, 10], // Example allocation percentages
+                        backgroundColor: ['#6366F1', '#22C55E', '#EF4444', '#FACC15', '#A855F7'],
+                        hoverOffset: 8
+                    }]
+                };
+        
+                // 📌 Make the chart expand to full width
+                const ctxSpaceAllocation = document.getElementById('spaceAllocationChart').getContext('2d');
+                new Chart(ctxSpaceAllocation, {
+                    type: 'doughnut',
+                    data: spaceAllocationData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,  // Allow dynamic resizing
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            </script>
+        
+        
             
           </div>
     
