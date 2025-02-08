@@ -44,6 +44,10 @@ Currently, this project is under development for a hackathon. Contributions are 
 ## 📧 Contact  
 For queries, feel free to reach out! 🚀  
 
+## Screenshots
+![WhatsApp Image 2025-02-08 at 23 51 38_7c24deef](https://github.com/user-attachments/assets/fb6c923b-9aa5-47bd-a9d3-5f3efbc3e897)
+
+
 ---
 
 This README will be updated once the frontend and backend are fully integrated. Stay tuned!  
