@@ -5,6 +5,7 @@ from basic import train_initial_model, predict_sales, add_data, retrain_model, m
 import tensorflow as tf 
 from tensorflow.keras.models import load_model
 from joblib import load
+from basic import*
 tf.config.run_functions_eagerly(True)
 
 app = Flask(__name__)
