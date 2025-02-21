@@ -7,3 +7,15 @@ pymongo
 scikit-learn
 matplotlib
 seaborn
+
+```
+Explanation:
+Flask - Required for building the API.
+tensorflow - For deep learning models.
+joblib - For saving and loading models.
+pandas - For data manipulation.
+numpy - For numerical operations.
+pymongo - For database interactions with MongoDB.
+scikit-learn - For preprocessing (StandardScaler, etc.).
+matplotlib - For plotting graphs.
+seaborn - For enhanced visualizations.
