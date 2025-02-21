@@ -46,9 +46,7 @@ The response will include:
 ## Contributing
 If you'd like to contribute, feel free to fork the repository and submit a pull request with improvements.
 
-## License
-This project is licensed under the MIT License.
 
 ## Contact
-For queries or suggestions, reach out via [your email/contact information].
+For queries or suggestions, reach out via somandhir@gmail.com
 
