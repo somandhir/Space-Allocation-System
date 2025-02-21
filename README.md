@@ -15,7 +15,6 @@ This repository consists of two main folders:
 - Current working features:
   - **Dark mode toggle**  
   - **File upload functionality**  
-- **Note:** Other frontend features (like prediction generation) are not functional yet.
 
 ### 2️⃣ Backend  
 - Developed in **Python**.  
