@@ -12,6 +12,7 @@ import random
 from joblib import dump, load
 import matplotlib.pyplot as plt
 import seaborn as sns
+import io
 
 #connecting to mongodb
 
